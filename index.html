@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mat Longevity Project | BJJ Over 40 Performance & Nutrition</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --bg-main: #0B0F13;
+            --bg-card: #141A22;
+            --primary: #E63946;
+            --primary-hover: #C82333;
+            --text-main: #F8F9FA;
+            --text-muted: #ADB5BD;
+            --border: #232E3C;
+            --accent: #FFB703;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(11, 15, 19, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .badge {
+            background-color: var(--border);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 183, 3, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 90px 0 60px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(20, 26, 34, 0.5) 0%, rgba(11, 15, 19, 1) 100%);
+        }
+
+        .partnership-banner {
+            display: inline-block;
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .partnership-banner strong {
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--border);
+            color: var(--text-main);
+            box-shadow: none;
+            margin-left: 12px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border);
+            color: var(--text-main);
+            box-shadow: none;
+        }
+
+        /* Lineage Section */
+        .lineage {
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background-color: rgba(20, 26, 34, 0.3);
+            text-align: center;
+        }
+
+        .lineage-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .lineage-names {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Universal Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Grid Frameworks */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(230, 57, 70, 0.4);
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Arsenal Specifics */
+        .arsenal-card {
+            border-left: 4px solid var(--primary);
+        }
+
+        .arsenal-note {
+            grid-column: 1 / -1;
+            background-color: rgba(255, 183, 3, 0.05);
+            border: 1px dashed var(--accent);
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .powerplate-promo { grid-column: 1 / -1; }
+        .promo-code { color: var(--accent); overflow-wrap: anywhere; }
+        .powerplate-promo .btn { margin: 20px 0 16px; }
+        .powerplate-promo .affiliate-disclosure { font-size: 0.85rem; }
+        @media (max-width: 380px) {
+            .grid-3 { grid-template-columns: 1fr; }
+            .nav-container { flex-wrap: wrap; gap: 12px; }
+        }
+
+        /* Pricing & Packaging */
+        .pricing-section {
+            background-color: rgba(20, 26, 34, 0.4);
+        }
+
+        .featured-box {
+            background-color: var(--bg-card);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 48px;
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .box-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--text-main);
+            margin: 16px 0;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 24px 0 32px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            text-align: left;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 28px;
+            color: var(--text-muted);
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        /* Small Audit Card */
+        .audit-card {
+            max-width: 550px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+
+        .price-inline {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 12px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Layout Overrides */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.25rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .lineage-names { gap: 20px; flex-direction: column; }
+            .btn { width: 100%; text-align: center; margin-bottom: 12px; }
+            .btn-secondary { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo-group">
+                <span class="logo-main">Mat Longevity</span>
+                <span class="logo-sub">Project</span>
+            </div>
+            <div class="badge">BJJ Black Belt Owned</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="partnership-banner">
+                    ⚡ Official Partner of <strong>6 Pack Macros</strong> Nutrition Systems
+                </div>
+                <h1>Stay on the Mats.<br>Eliminate the Pain.</h1>
+                <p>A premier hybrid mobility, neurological conditioning, and high-performance nutrition system built strictly for Masters division Brazilian Jiu-Jitsu athletes over 40.</p>
+                <div class="hero-buttons">
+                    <a href="https://6packmacros.com/coach/michael-demianiuk" class="btn" target="_blank" rel="noopener noreferrer">Book a BJJ Body Audit & Macro Plan</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="lineage">
+            <div class="container">
+                <div class="lineage-title">BJJ Training & Instruction Lineage</div>
+                <div class="lineage-names">
+                    <span>Pete McHugh</span>
+                    <span>Eddie Sanchez</span>
+                    <span>Luis Heredia</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="pillars">
+            <div class="container">
+                <div class="section-header">
+                    <h2>The Master's Longevity Pillars</h2>
+                    <p>Engineered structural strategies designed to bulletproof your joints and keep you rolling indefinitely.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>Spinal Decompression</h3>
+                        <p>Counteract stacking, heavy guard pressure, and core compression with precision spring resistance built to open up your thoracic spine.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Joint Density Stabilization</h3>
+                        <p>Wake up dormant stabilizing tendons and muscles around worn out knees, shoulders, and lower lumbar structures before hard sparring loops.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Dynamic Guard Mobility</h3>
+                        <p>Develop active eccentric flexibility mimicking open guard framing, deep half recoveries, and high-impact hip movements without forcing raw joints.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="arsenal" style="background-color: rgba(20, 26, 34, 0.2);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>The Medical & Athletic Tech Arsenal</h2>
+                    <p>Combining decades of fitness studio mastery with professional mechanical diagnostic equipment.</p>
+                </div>
+                <div class="grid-2">
+                    <div class="card arsenal-card">
+                        <h3>Boutique Pilates Reformer Specialist</h3>
+                        <p>Used to configure high-leverage eccentric core control, elongation strings, and low-impact joint articulation tailored specifically to martial artists.</p>
+                    </div>
+                    <div class="card arsenal-card">
+                        <h3>Pro 6 Power Plate Specialist</h3>
+                        <p>Employs hyper-targeted multi-directional vibration cycles to trigger instant neuromuscular contraction, accelerated blood flow, and rapid metabolic recovery.</p>
+                    </div>
+                    <aside class="card powerplate-promo" id="power-plate-offer" aria-labelledby="power-plate-title">
+                        <h3 id="power-plate-title">Save 20% on Power Plate</h3>
+                        <p>Use code <strong class="promo-code">THEMATLONGEVITYPROJECT</strong> at checkout.</p>
+                        <p><a href="https://powerplate.com/thematlongevityproject" class="btn btn-secondary" target="_blank" rel="sponsored noopener noreferrer">Shop Power Plate — Save 20%</a></p>
+                        <p class="affiliate-disclosure">Michael earns a commission on purchases made through this referral link.</p>
+                    </aside>
+                    <div class="arsenal-note">
+                        ⚙️ <strong>Flexible Equipment Model:</strong> While we specialize in maximizing the Power Plate and Reformer, your tailored performance programming can be dynamically built to utilize <strong>any equipment you currently have available</strong>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section" id="coaching">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Exclusive Coaching Blueprint</h2>
+                    <p>A rigorous, comprehensive approach balancing custom athletic optimization with premier metabolic nutrition.</p>
+                </div>
+                
+                <div class="featured-box">
+                    <div class="box-badge">All-Inclusive Framework</div>
+                    <h3>The 12-Week Structural Mat Longevity Program</h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;">A completely private, high-ticket engineered framework focused on keeping active executive athletes training 3-4 days a week injury free.</p>
+                    
+                    <div class="price-tag">$1,200 - $1,500 <span>/ Full 10-Session Course</span></div>
+                    
+                    <ul class="feature-list">
+                        <li>1-on-1 Elite Neuromuscular Coaching</li>
+                        <li>Custom Reformer Lineage Routines</li>
+                        <li>Power Plate Recovery & Lymphatic Drainage</li>
+                        <li>Personalized Pre-Sparring Warmup Blueprints</li>
+                        <li>Integrated 6 Pack Macros Nutrition Architecture</li>
+                        <li>Flexible Adaptations for Any Available Equipment</li>
+                    </ul>
+                    
+                    <a href="https://6packmacros.com/coach/michael-demianiuk" class="btn" target="_blank" rel="noopener noreferrer" style="width: 100%;">Apply For Enrollment</a>
+                </div>
+
+                <div class="card audit-card">
+                    <h3>Start with a BJJ Body Audit</h3>
+                    <p>A comprehensive 45-minute movement analysis mapping out your guard restrictions, structural weaknesses, and localized joint limitations.</p>
+                    <div class="price-inline">$99</div>
+                    <a href="https://6packmacros.com/coach/michael-demianiuk" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Schedule Initial Assessment</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mat Longevity Project. All Rights Reserved. Partnered with 6 Pack Macros.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
